@@ -51,6 +51,7 @@ def get_parking_spots(connected_components):
 
         slots.append([x1, y1, w, h])
 
+<<<<<<< HEAD
     return slots
 
 
@@ -79,3 +80,6 @@ def get_parking_spots(connected_components):
 #         return True
 #     else:
 #         return False
+=======
+    return slots
+>>>>>>> 46b3695e7069d38a52c53f3678cb3b6ad4bbb9fa
