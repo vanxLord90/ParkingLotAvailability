@@ -6,7 +6,7 @@ import cv2
 EMPTY=True
 NOT_EMPTY = False
 
-MODEL = joblib.load('C:\\Users\\dasak\\HackAi\\ParkingLotAvailability\\parkifymodel\\parking_model5.pkl')
+MODEL = joblib.load('C:\\Users\\dasak\\HackAi\\ParkingLotAvailability\\parkifymodel\\models\\parking_model5.pkl')
 
 def is_car_there(spot_bgr):
     flat_data =[]
