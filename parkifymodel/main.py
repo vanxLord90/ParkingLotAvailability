@@ -12,7 +12,7 @@ import os
 import joblib
 
 # prep data
-image_dir = 'C:\\Users\\dasak\\HackAi\\clf-data\\clf-data'
+image_dir = 'C:\\Users\\dasak\HackAi\\clf-data\\clf-data'
 im_types = ['empty', 'not_empty']
 
 dataset = []
@@ -21,7 +21,7 @@ for im_type_index,im_type in enumerate(im_types):
      for file in os.listdir(os.path.join(image_dir,im_type)):
          im_path = os.path.join(image_dir,im_type, file)
          image = io.imread(im_path)
-         image = resize(image,(70,40,3)) #change dimensions if
+         image = resize(image,(20,20)) #change dimensions if
          dataset.append(image.flatten())
          labels.append(im_type_index)
         #  print()
@@ -49,11 +49,6 @@ y_pred = estimator.predict(x_test)
 score = accuracy_score(y_pred,y_test)
 print('{}% of samples were correctly classified'.format(str(score*100)))
 
-# est = joblib.load('parking_model.pkl')
-# y_pred = est.predict(x_test)
-# score = accuracy_score(y_pred,y_test)
-# print('{}% of samples were correctly classified'.format(str(score*100)))
-
-# joblib.dump(estimator,'parking_model3.pkl')
+# joblib.dump(estimator,'parking_model5.pkl')
 
 

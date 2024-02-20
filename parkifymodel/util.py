@@ -6,12 +6,12 @@ import cv2
 EMPTY=True
 NOT_EMPTY = False
 
-MODEL = joblib.load('parking_model.pkl')
+MODEL = joblib.load('C:\\Users\\dasak\\HackAi\\ParkingLotAvailability\\parkifymodel\\parking_model5.pkl')
 
 def is_car_there(spot_bgr):
     flat_data =[]
     try:
-        img_resized = resize(spot_bgr,(15,15,3))
+        img_resized = resize(spot_bgr,(20,20,3))
         
         # cv2.imshow('window2',img_resized)
         # cv2.resizeWindow('window2', 500,500)
@@ -51,35 +51,4 @@ def get_parking_spots(connected_components):
 
         slots.append([x1, y1, w, h])
 
-<<<<<<< HEAD
     return slots
-
-
-# def check_color(space_img, target_color, threshold=50):
-    
-#     space_img = cv2.convertScaleAbs(space_img)
-#     # Convert the image to HSV
-#     hsv_image = cv2.cvtColor(space_img, cv2.COLOR_BGR2HSV)
-
-#     # Calculate histogram
-#     histogram = cv2.calcHist([hsv_image], [0], None, [180], [0, 180])
-
-#     # Find the bin with the highest frequency
-#     dominant_color_bin = np.argmax(histogram)
-
-#     # Convert the dominant color bin to the corresponding hue value
-#     dominant_hue = int(dominant_color_bin * 180 / 179)
-
-#     # Convert the target color to HSV
-#     target_color_hsv = np.array([[target_color]], dtype=np.uint8)
-#     target_color_hsv = cv2.cvtColor(target_color_hsv, cv2.COLOR_BGR2HSV)
-#     target_hue = target_color_hsv[0][0][0]
-
-#     # Check if the dominant hue is within a threshold of the target hue
-#     if abs(dominant_hue - target_hue) <= threshold:
-#         return True
-#     else:
-#         return False
-=======
-    return slots
->>>>>>> 46b3695e7069d38a52c53f3678cb3b6ad4bbb9fa

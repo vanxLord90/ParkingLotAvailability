@@ -7,37 +7,27 @@ import matplotlib
 from skimage.transform import resize
 import matplotlib.pyplot as plt
 import datetime
-<<<<<<< HEAD
+# <<<<<<< HEAD
 import os
-=======
->>>>>>> 46b3695e7069d38a52c53f3678cb3b6ad4bbb9fa
+# =======
+# >>>>>>> 46b3695e7069d38a52c53f3678cb3b6ad4bbb9fa
 
 from util import  get_parking_spots, is_car_there
 
 
-<<<<<<< HEAD
+mask = 'C:\\Users\\dasak\\HackAi\\ParkingLotAvailability\\parkifymodel\\MASKOFPKLOTACROSSDREESE3.png'
 
-parking_image_test = 'C:\\Users\\dasak\\HackAi\\ParkingLotAvailability\\parkifymodel\\im_by_2_mins\\im_at_0_mins.png'
+parking_image_test = 'C:\\Users\\dasak\\HackAi\\ParkingLotAvailability\\parkifymodel\\pickl5test1.png'
 parking_image_test1 = cv2.imread(parking_image_test)
 
-
-mask = 'C:\\Users\\dasak\\HackAi\\ParkingLotAvailability\\parkifymodel\\mask_folder\\mask_1920_1080.png'
-
-=======
-mask = 'C:\\Users\\dasak\\HackAi\\ParkingLotAvailability\\parkifymodel\\mask_1920_1080.png'
-
-parking_image_test = 'C:\\Users\\dasak\\HackAi\\ParkingLotAvailability\\parkifymodel\\big_lot.png'
-parking_image_test1 = cv2.imread(parking_image_test)
-
->>>>>>> 46b3695e7069d38a52c53f3678cb3b6ad4bbb9fa
-parking_image_test2 = resize(parking_image_test1,(1080,1920))
+parking_image_test2 = resize(parking_image_test1,(1908,449))
 
 # import cv2
 
 # Load the image in color
 mask2 = cv2.imread(mask)
 
-# Convert the image to grayscale
+# Convert the image to grayscalex
 mask2_gray = cv2.cvtColor(mask2, cv2.COLOR_BGR2GRAY)
 
 # Threshold to create binary image
@@ -106,16 +96,12 @@ for space in parking_spaces:
         cv2.rectangle(frame,(x1+15,y1),(x1+w+17,y1+h),(0,0,255),1)
 
 total_spaces = open_space+closed_space
-<<<<<<< HEAD
 window_str = f"Number of Spots Available are : {open_space} / {total_spaces}"
 now = datetime.datetime.now()
 
 formatted_time = now.strftime("%Y-%m-%d %I:%M %p")
 
 window_str2 = f"Time: {formatted_time}"
-=======
-window_str = f"Number of Spots Available are : {open_space} / {total_spaces} \n Time: {datetime.datetime.now()}"
->>>>>>> 46b3695e7069d38a52c53f3678cb3b6ad4bbb9fa
 org = (50,50)
 font = cv2.FONT_HERSHEY_DUPLEX
 fontScale = 1
@@ -126,7 +112,6 @@ thickness = 2
 cv2.putText(frame, window_str, org, font,  
                    fontScale, color_of_text, thickness, cv2.LINE_AA)
 
-<<<<<<< HEAD
 
 # # Display window_str
 # cv2.putText(frame, window_str, org, font, fontScale, color_of_text, thickness, cv2.LINE_AA)
@@ -147,10 +132,6 @@ file_name = "classified_lot_2_map.png"
 fp = os.path.join(fdp, file_name)
 cv2.imwrite(fp, frame)
 
-=======
-cv2.imshow('frame',frame)
-# cv2.imwrite('')
->>>>>>> 46b3695e7069d38a52c53f3678cb3b6ad4bbb9fa
 
 cv2.waitKey(0)
     
