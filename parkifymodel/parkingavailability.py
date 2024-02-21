@@ -28,7 +28,9 @@ parking_image_test1 = cv2.imread(parking_image_test)
 # _, binary_mask = cv2.threshold(mask2_gray, 127, 255, cv2.THRESH_BINARY)
 # num_labels, labels, stats, centroids = cv2.connectedComponentsWithStats(binary_mask, 4, cv2.CV_32S)
 
+# parking_image_test2 = cv2.resize(parking_image_test1, (1555,1802))
 parking_image_test2 = cv2.resize(parking_image_test1, (2867,1335))
+
 
 # Load the mask image and convert it to grayscale
 mask2 = cv2.imread(mask)
@@ -80,7 +82,7 @@ for space in parking_spaces:
         
 
 cv2.imshow('frame',frame)
-cv2.imwrite('nffh5.png', frame)
+cv2.imwrite('nfh.png', frame)
 
 
 cv2.waitKey(0)
